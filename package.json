@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sig1smund/goit-js-hw-08"
+    "url": "git+https://github.com/Sig1smund/goit-js-hw-08.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Ihor Fomin <ultramarine@live.ru>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sig1smund/goit-js-hw-08"
