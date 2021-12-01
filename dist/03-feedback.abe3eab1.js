@@ -19376,6 +19376,7 @@ var define;
 var _lodash = require("lodash");
 
 var inputForm = document.querySelector(".feedback-form");
+var dirtyArray = [];
 var dataBase = [];
 inputForm.addEventListener("input", (0, _lodash.throttle)(onFormInput, 500));
 inputForm.addEventListener("submit", onFormSubmit);
@@ -19386,14 +19387,14 @@ function onFormInput() {
     message: inputForm.message.value
   };
   localStorage.setItem("feedback-form-state", JSON.stringify(data));
-  dataBase.push(data);
-  dataBase.reverse().splice(1, dataBase.length);
+  dirtyArray.push(data);
 }
 
 function onFormSubmit(e) {
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
+  dataBase.push(dirtyArray[dirtyArray.length - 1]);
   console.log(dataBase);
 }
 
