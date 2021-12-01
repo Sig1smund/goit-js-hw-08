@@ -1,6 +1,7 @@
 import { throttle } from "lodash";
 
 const inputForm = document.querySelector(".feedback-form");
+const dataBase = [];
 
 inputForm.addEventListener("input", throttle(onFormInput, 500));
 inputForm.addEventListener("submit", onFormSubmit);
@@ -11,6 +12,9 @@ function onFormInput() {
     message: inputForm.message.value,
   };
   localStorage.setItem("feedback-form-state", JSON.stringify(data));
+
+  dataBase.push(data);
+  dataBase.reverse().splice(1, dataBase.length);
 }
 
 function onFormSubmit(e) {
@@ -18,6 +22,8 @@ function onFormSubmit(e) {
   e.currentTarget.reset();
 
   localStorage.removeItem("feedback-form-state");
+
+  console.log(dataBase);
 }
 
 function fullfillForm() {
