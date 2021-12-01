@@ -19395,6 +19395,7 @@ function onFormSubmit(e) {
   e.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
   dataBase.push(dirtyArray[dirtyArray.length - 1]);
+  dirtyArray.splice(0, dirtyArray.length);
   console.log(dataBase);
 }
 
